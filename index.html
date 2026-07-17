@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2f6b57" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="我的健身計畫" />
+    <meta name="description" content="六天居家健身循環、飯後走路、低衝擊替代方案與 YouTube 教學。" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>我的居家健身計畫</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">動</div>
+        <div class="brand-copy">
+          <p class="eyebrow">我的居家健身</p>
+          <h1>今天，舒服地動一動</h1>
+        </div>
+        <button class="icon-button" id="installHelp" type="button" aria-label="如何加到 iPad 主畫面">＋ iPad</button>
+      </header>
+
+      <main>
+        <section class="welcome-card" aria-labelledby="cycleHeading">
+          <div>
+            <p class="eyebrow">六天循環＋一天休息</p>
+            <h2 id="cycleHeading">今天想做哪一天？</h2>
+            <p>不用管星期幾。看心情、天氣和身體狀況選一天。</p>
+          </div>
+          <div class="progress-wrap" aria-label="循環進度">
+            <div class="progress-number"><strong id="progressCount">0</strong><span>/ 6</span></div>
+            <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+            <button class="text-button" id="resetCycle" type="button">重新開始循環</button>
+          </div>
+        </section>
+
+        <section class="comfort-panel" aria-label="身體狀況選擇">
+          <div>
+            <strong>今天腳底或關節不舒服嗎？</strong>
+            <span>開啟後，自動顯示更溫和的選擇。</span>
+          </div>
+          <label class="switch">
+            <input id="gentleMode" type="checkbox" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+            <span class="switch-label">溫和模式</span>
+          </label>
+        </section>
+
+        <section class="day-grid" id="dayGrid" aria-label="選擇健身日"></section>
+
+        <section class="day-detail" id="dayDetail" aria-live="polite" hidden>
+          <div class="detail-heading">
+            <button class="back-button" id="backToDays" type="button">← 回到七天選單</button>
+            <div class="day-title-row">
+              <div>
+                <p class="eyebrow" id="detailKicker"></p>
+                <h2 id="detailTitle"></h2>
+                <p id="detailSummary"></p>
+              </div>
+              <div class="time-pill" id="detailTime"></div>
+            </div>
+          </div>
+
+          <div class="plan-steps" id="planSteps"></div>
+
+          <div class="finish-card">
+            <div>
+              <strong id="finishTitle">今天完成了嗎？</strong>
+              <span>每一次完成，都是在保護未來的肌力和平衡。</span>
+            </div>
+            <button class="finish-button" id="finishDay" type="button">✓ 今天完成</button>
+          </div>
+        </section>
+
+        <section class="tutorials" id="tutorials">
+          <div class="section-heading">
+            <p class="eyebrow">姿勢先學好</p>
+            <h2>四個啞鈴動作教學</h2>
+            <p>第一次先看影片、徒手練習；動作舒服後再使用 5 lb 啞鈴。</p>
+          </div>
+          <div class="tutorial-grid" id="tutorialGrid"></div>
+        </section>
+
+        <section class="safety-note" aria-label="安全提醒">
+          <strong>安全提醒</strong>
+          <p>保持可以說話的強度。若出現胸悶、頭暈、異常喘、關節刺痛或持續疼痛，請停止運動並諮詢醫療專業人員。</p>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="installDialog" class="install-dialog">
+      <button class="dialog-close" id="closeDialog" type="button" aria-label="關閉">×</button>
+      <p class="eyebrow">放到 iPad 主畫面</p>
+      <h2>以後點一下就能開始</h2>
+      <ol>
+        <li>使用 <strong>Safari</strong> 開啟這個 App。</li>
+        <li>點選上方或下方的「分享」按鈕。</li>
+        <li>選擇「<strong>加入主畫面</strong>」。</li>
+        <li>按「加入」，主畫面就會出現圖示。</li>
+      </ol>
+      <button class="primary-button" id="dialogDone" type="button">我知道了</button>
+    </dialog>
+
+    <div class="timer-dock" id="timerDock" hidden>
+      <div>
+        <span>飯後走路計時</span>
+        <strong id="timerDisplay">10:00</strong>
+      </div>
+      <button id="timerToggle" type="button">開始</button>
+      <button id="timerClose" type="button" aria-label="關閉計時器">×</button>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
