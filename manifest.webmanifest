@@ -1,0 +1,12 @@
+{
+  "name": "我的居家健身計畫",
+  "short_name": "我的健身",
+  "description": "六天居家健身循環與飯後走路計畫",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5ee",
+  "theme_color": "#2f6b57",
+  "orientation": "any"
+}
